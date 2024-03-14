@@ -6,12 +6,10 @@ pipeline {
     }
     agent any
     stages {
-        stage('Checkout') {
-            checkout scm
-        }
+        
         stage('Cloning Git') {
             steps {
-                git 'https://github.com/ay-ike/301257019_ike_Lab3_part1'
+                git branch: 'main', url: 'https://github.com/ay-ike/301257019_ike_Lab3_part1'
             }
         }
         stage('Building image') {
