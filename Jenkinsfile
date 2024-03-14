@@ -12,6 +12,13 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/ay-ike/301257019_ike_Lab3_part1'
             }
         }
+
+        stage('Maven Build') { 
+            steps {
+                bat "mvn clean compile"
+            }
+        }
+        
         stage('Building image') {
             steps{
                 script {
