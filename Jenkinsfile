@@ -24,6 +24,16 @@ pipeline {
                 bat "mvn clean compile"
             }
         }
+
+	stage('Test'){
+	    step{
+		    jacoco(
+	                execPattern: '**/build/jacoco/*.exec',
+	                classPattern: '**/build/classes/java/main',
+	                sourcePattern: '**/src/main'
+	            )
+	    }
+	}
         
         stage('Building image') {
             steps{
