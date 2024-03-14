@@ -26,7 +26,7 @@ pipeline {
         }
 
 	stage('Test'){
-	    step{
+	    steps{
 		    jacoco(
 	                execPattern: '**/build/jacoco/*.exec',
 	                classPattern: '**/build/classes/java/main',
