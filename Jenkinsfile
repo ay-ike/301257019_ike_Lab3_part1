@@ -16,12 +16,8 @@ pipeline {
         stage('Cloning Git') {
             steps {
                 git branch: 'main', url: 'https://github.com/ay-ike/301257019_ike_Lab3_part1'
-            }
-        }
-
-        stage('Maven Build') { 
-            steps {
-                bat "mvn clean compile"
+            
+                bat "mvn clean install"
             }
         }
 
